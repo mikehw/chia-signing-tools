@@ -23,9 +23,9 @@ For version 0.1.x you must be running the chia wallet to sign and verify message
 [chia-agent](https://github.com/Chia-Mine/chia-agent) is used to interact with the chia daemon and wallet.
 
 ### Sign a message
-Execute `npx chia-signing-cli did-sign`
+Execute `npx -p chia-signing-cli did-sign`
 
 If you have more than one key, you will be prompted to select the key to sign with.
 
 ### Verify a message
-Execute `npx chia-signing-cli verify`
+Execute `npx -p chia-signing-cli verify`
