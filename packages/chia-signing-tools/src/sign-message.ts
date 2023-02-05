@@ -16,7 +16,6 @@ export async function sign_message(
   const messageObject = {
     did: didResp.my_did,
     message,
-    ts: new Date().toISOString(),
   };
   const msg = get_str_to_sign(messageObject);
   const signature = await sign_message_by_id(wallet_agent(), {
