@@ -1,14 +1,14 @@
 {
   "name": "chia-signing-cli",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "./lib/sign.js",
   "license": "MIT",
   "dependencies": {
-    "chia-signing-tools": "0.1.2",
+    "chia-signing-tools": "0.2.0",
     "prompts": "^2.4.2"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build --force",
     "fmt": "prettier --write \"src/**/*.ts\""
   },
   "bin": {
@@ -21,6 +21,10 @@
   },
   "devDependencies": {
     "@types/prompts": "^2.4.2",
-    "prettier": "^2.8.3"
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.5"
   }
 }

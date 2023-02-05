@@ -1,8 +1,5 @@
 {
-    "cSpell.words": [
-        "bech",
-        "datetime"
-    ],   
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
+  "cSpell.words": ["bech", "datetime", "npm", "npx", "cli"],
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2
 }

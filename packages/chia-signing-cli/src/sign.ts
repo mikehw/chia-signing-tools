@@ -1,5 +1,5 @@
 import { get_did_wallets } from './get-did-wallets';
-import { log_in } from 'chia-agent/api/rpc/wallet';
+import { log_in, did_get_did } from 'chia-agent/api/rpc/wallet';
 import { wallet_agent } from './get-agents';
 import { get_fingerprints } from './get-fingerprints';
 import { sign_message } from 'chia-signing-tools';
@@ -8,8 +8,15 @@ import * as prompts from 'prompts';
 async function main() {
   await selectKeyAndLogIn();
   const wallet = await selectWallet();
+  const didResp = await did_get_did(wallet_agent(), { wallet_id: wallet.id });
+  if ('error' in didResp) {
+    throw new Error(didResp.error);
+  }
+  if (!didResp.my_did) {
+    throw new Error('No DID found');
+  }
   const message = await getMessage();
-  return await sign_message(wallet, message);
+  return await sign_message(didResp.my_did, message);
 }
 
 async function selectKeyAndLogIn() {
