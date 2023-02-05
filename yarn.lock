@@ -339,14 +339,6 @@ chia-bls@^1.0.1:
     jssha "^3.3.0"
     randombytes "^2.1.0"
 
-chia-signing-tools@0.2.0:
-  version "0.1.2"
-  dependencies:
-    bech32 "^2.0.0"
-    chia-agent "^10.0.0"
-    clvm-lib "^1.0.0"
-    zod "^3.20.2"
-
 clvm-lib@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/clvm-lib/-/clvm-lib-1.0.0.tgz#91cde102b1524d2f5b87a81e7e7f0648afb6ec83"
