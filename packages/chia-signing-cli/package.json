@@ -1,0 +1,22 @@
+{
+  "name": "chia-signing-cli",
+  "version": "0.1.0",
+  "main": "./lib/sign.js",
+  "license": "MIT",
+  "dependencies": {
+    "chia-signing-tools": "0.1.0",
+    "prompts": "^2.4.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "fmt": "prettier --write \"src/**/*.ts\""
+  },
+  "bin": {
+    "did-sign": "./bin/did-sign",
+    "verify": "./bin/verify"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.4.2",
+    "prettier": "^2.8.3"
+  }
+}

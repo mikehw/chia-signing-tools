@@ -1,0 +1,14 @@
+{
+  "exclude": [
+    "packages/**/tests/**",
+    "packages/**/lib/**"
+ ],
+  "references": [
+   {
+      "path": "./packages/chia-signing-tools"
+   },
+   {
+      "path": "./packages/chia-signing-cli"
+   }
+ ]
+ }

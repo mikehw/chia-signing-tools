@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "name": "chia-signing",
+  "workspaces": [
+    "packages/*"
+  ]
+}
