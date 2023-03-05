@@ -1,12 +1,14 @@
 {
   "name": "chia-signing-tools",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./lib/index.js",
   "license": "MIT",
   "dependencies": {
+    "@types/node-fetch": "2",
     "bech32": "^2.0.0",
-    "chia-agent": "^10.0.0",
+    "chia-agent": "10",
     "clvm-lib": "^1.0.0",
+    "node-fetch": "2",
     "zod": "^3.20.2"
   },
   "scripts": {
