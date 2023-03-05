@@ -16,18 +16,18 @@ export async function getCol1Id(nftId: string): Promise<string> {
     throw new Error(nftInfo.error);
   }
   const metadataUrls = nftInfo.nft_info.metadata_uris;
-  const did = nftInfo.nft_info.minter_did;
+  let did = nftInfo.nft_info.minter_did;
+  if (!did) {
+    throw new Error('No minter did found for NFT, unable to get col1');
+  }
+  did = removePrefix(did, '0x');
   const collectionId = await getCollectionIdFromMetadataUrls(metadataUrls);
   if (!collectionId || !did) {
-    throw new Error(
-      'Unable to load collection info for NFT, unable to sign Error 2'
-    );
+    throw new Error('No collection id found for NFT, unable to get col1');
   }
   const col1Id = getColId(did, collectionId);
   if (!col1Id) {
-    throw new Error(
-      'Unable to load collection info for NFT, unable to sign Error 3'
-    );
+    throw new Error('Error calculating col1 id, unable to sign');
   }
   return col1Id;
 }
@@ -48,7 +48,7 @@ export async function getCollectionIdFromMetadataUrls(
 }
 
 export function getColId(minter_did_id: string, collection_id: string) {
-  if (collection_id && minter_did_id) {
+  if (minter_did_id && collection_id) {
     const hashBuffer = createHash('sha256')
       .update(`${minter_did_id}${collection_id}`)
       .digest();

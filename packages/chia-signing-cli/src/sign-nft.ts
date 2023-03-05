@@ -10,9 +10,7 @@ async function main() {
   const nftId = await getNftId();
   const col1Id = await getCol1Id(nftId).catch((e) => {
     console.error(e);
-    console.log(
-      'Unable to load collection info for NFT, unable to sign Error 1'
-    );
+    console.log('Unable to load collection info for NFT, unable to sign');
     return;
   });
   if (!col1Id) {
